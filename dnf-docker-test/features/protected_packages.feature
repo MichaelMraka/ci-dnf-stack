@@ -36,7 +36,7 @@ Scenario: Removal of installed protected package
    | State        | Packages     |
    | present      | TestA, TestB |
 
- When I execute "dnf" command "-y remove TestB" with "fail"
+ When I execute "dnf" command "-y remove TestB" with "success"
  Then transaction changes are as follows
    | State        | Packages     |
    | removed      | TestA, TestB |
