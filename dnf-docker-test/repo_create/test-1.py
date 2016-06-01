@@ -103,6 +103,9 @@ rpm.add_requires('TestC')
 rpm.add_provides('ProvideA')
 pkgs.append(rpm)
 
+# For Obsoletes test
+pkgs.append(SimpleRpmBuild('TestObsoletes', '1', '1', ['noarch']))
+
 repo = YumRepoBuild(pkgs)
 
 repo.repoDir = repo_dir

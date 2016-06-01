@@ -158,6 +158,11 @@ rpm = SimpleRpmBuild('TestN', '1.0.0', '4', ['noarch'])
 pkgs.append(rpm)
 # Used in upgrade, downgrade, upgrade-to tests
 
+# For Obsoletes test
+rpm = SimpleRpmBuild('TestObsoletes-ng', '2', '1', ['noarch'])
+rpm.add_obsoletes('TestObsoletes < 1-2')
+pkgs.append(rpm)
+
 repo = YumRepoBuild(pkgs)
 
 repo.repoDir = repo_dir
